@@ -1,5 +1,10 @@
 lockfileVersion: '6.0'
 
+dependencies:
+  nanostores:
+    specifier: ^0.8.0
+    version: 0.8.0
+
 devDependencies:
   '@sveltejs/vite-plugin-svelte':
     specifier: ^2.0.3
@@ -7,15 +12,9 @@ devDependencies:
   '@tsconfig/svelte':
     specifier: ^4.0.1
     version: 4.0.1
-  '@types/p5':
-    specifier: ^1.6.1
-    version: 1.6.1
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.23)
-  p5:
-    specifier: ^1.6.0
-    version: 1.6.0
   p5bezier:
     specifier: ^0.3.3
     version: 0.3.3
@@ -317,10 +316,6 @@ packages:
 
   /@tsconfig/svelte@4.0.1:
     resolution: {integrity: sha512-B+XlGpmuAQzJqDoBATNCvEPqQg0HkO7S8pM14QDI5NsmtymzRexQ1N+nX2H6RTtFbuFgaZD4I8AAi8voGg0GLg==}
-    dev: true
-
-  /@types/p5@1.6.1:
-    resolution: {integrity: sha512-cF03IJc9jYjNfNxAuf0qVpFYhbDy1tGy+ChgZJZxnmCbfcqh9A7e0CItwC1Y5qGX02W/s2M7Nlw/SNY9UdZhgA==}
     dev: true
 
   /@types/pug@2.0.6:
@@ -759,6 +754,11 @@ packages:
     hasBin: true
     dev: true
 
+  /nanostores@0.8.0:
+    resolution: {integrity: sha512-Xgs3qwYhNYXyglDe41JEtACDvFZELFRofDBqBuJ02JG1mrwXWneQTsk89GHvW0bgLPcWXOz4GRm4enwgjnD8FQ==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dev: false
+
   /node-releases@2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
     dev: true
@@ -787,10 +787,6 @@ packages:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
-    dev: true
-
-  /p5@1.6.0:
-    resolution: {integrity: sha512-RowF+RxfVUhJm/YKXL5TCFzTqnwAIwK6W1VGs9LAqSf3PCmLz9Igbxzlf0Ry5IMV71L42wipCdH/bDiNsqAstA==}
     dev: true
 
   /p5bezier@0.3.3:

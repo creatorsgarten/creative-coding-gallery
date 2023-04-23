@@ -1,3 +1,9 @@
+<script lang="ts">
+  import { fly } from 'svelte/transition'
+  import { playingAudio, playingVideo } from '../context/nowPlaying'
+  import Audio from './nowPlaying/Audio.svelte'
+</script>
+
 <div class="z-50 h-full absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-between items-start">
   <div class="ml-auto flex flex-col items-end space-y-8">
     <div class="flex">
@@ -13,9 +19,15 @@
       <p>meetup</p>
     </div>
   </div>
-  <div class="bg-black/50 text-white px-16 py-8 mb-16 text-shadow text-3xl space-y-4">
-    <p><b>Artwork name</b> by <b>Artist name</b></p>
-    <p>♫ <b>Now Playing</b>: <b>"Song title"</b> by <b>Artist name</b></p>
+  <div class="bg-black/50 min-w-[33%] text-white px-16 py-8 mb-16 text-shadow text-3xl space-y-4">
+    <p>
+      {#if $playingVideo === null}
+        Not Playing
+      {:else}
+        <b>{$playingVideo.name}</b> by <b>{$playingVideo.author}</b>
+      {/if}
+    </p>
+    <Audio />
   </div>
 </div>
 

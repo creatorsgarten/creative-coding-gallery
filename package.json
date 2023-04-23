@@ -9,12 +9,13 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
+  "dependencies": {
+    "nanostores": "^0.8.0"
+  },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@tsconfig/svelte": "^4.0.1",
-    "@types/p5": "^1.6.1",
     "autoprefixer": "^10.4.14",
-    "p5": "^1.6.0",
     "p5bezier": "^0.3.3",
     "postcss": "^8.4.23",
     "svelte": "^3.57.0",
