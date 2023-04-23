@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { shuffle } from 'lodash'
   import { onMount } from 'svelte'
+  import shuffle from 'lodash/shuffle'
 
   import { submissions } from '../../data/submissions'
   import { playingVideo } from '../context/nowPlaying'
