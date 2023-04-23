@@ -19,7 +19,6 @@
     "@tsconfig/svelte": "^4.0.1",
     "@types/lodash": "^4.14.194",
     "autoprefixer": "^10.4.14",
-    "p5bezier": "^0.3.3",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.0",
