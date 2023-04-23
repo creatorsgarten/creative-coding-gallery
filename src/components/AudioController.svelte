@@ -25,7 +25,9 @@
   $: {
     if (audioPlaylists.length !== 0) {
       console.log('current audio playlist')
-      console.table(audioPlaylists.map(({ name, author }) => ({ name, author })))
+      console.table(
+        audioPlaylists.map(({ name, author }) => ({ name, author }))
+      )
     }
   }
 
@@ -44,7 +46,9 @@
 
         playing = true
 
-        console.log(`now playing video: ${targetSubmission.name} by ${targetSubmission.author}`)
+        console.log(
+          `now playing video: ${targetSubmission.name} by ${targetSubmission.author}`
+        )
       } catch (e) {
         console.log(e)
         // when cursor out of index, means that it ran out of playlists
@@ -54,7 +58,11 @@
   }
 </script>
 
-<audio class="hidden" bind:this={audioElement} on:ended={() => {
-  cursor++
-  playing = false
-}}></audio>
+<audio
+  class="hidden"
+  bind:this={audioElement}
+  on:ended={() => {
+    cursor++
+    playing = false
+  }}
+/>

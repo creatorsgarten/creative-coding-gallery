@@ -1,23 +1,23 @@
-import type { Submission } from "../@types/Submission";
+import type { Submission } from '../@types/Submission'
 
 export const submissions: Submission[] = [
   {
     name: 'アヤノの幸福理論',
     author: 'じん',
     type: 'audio',
-    fileName: 'ayano.mp3'
+    fileName: 'ayano.mp3',
   },
   {
     name: 'you',
     author: 'V/A',
     type: 'audio',
-    fileName: 'you.mp3'
+    fileName: 'you.mp3',
   },
   {
     name: 'Imperishable Night 2006',
     author: 'V/A',
     type: 'audio',
-    fileName: '0322 - Imperishable Night 2006 (2016 Refine).mp3'
+    fileName: '0322 - Imperishable Night 2006 (2016 Refine).mp3',
   },
   {
     name: 'test video #1',

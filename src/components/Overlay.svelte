@@ -3,22 +3,36 @@
   import Video from './nowPlaying/Video.svelte'
 </script>
 
-<div class="z-50 h-full absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-between items-start">
+<div
+  class="absolute bottom-0 left-0 right-0 top-0 z-50 flex h-full flex-col items-start justify-between"
+>
   <div class="ml-auto flex flex-col items-end space-y-8">
     <div class="flex">
-      <div class="w-0 h-0 border-[40px] border-black/80 border-l-transparent border-b-transparent"></div>
-      <div class="bg-black/80 flex space-x-8 py-4 pr-8 pl-2 items-center">
-        <img src="/organizers/creatorsgarten.png" class="pl-2 h-12 w-auto shrink-0" alt="creatorsgarten" />
-        <img src="/organizers/cleverse.png" class="h-10 w-auto shrink-0" alt="cleverse" />
+      <div
+        class="h-0 w-0 border-[40px] border-black/80 border-b-transparent border-l-transparent"
+      />
+      <div class="flex items-center space-x-8 bg-black/80 py-4 pl-2 pr-8">
+        <img
+          src="/organizers/creatorsgarten.png"
+          class="h-12 w-auto shrink-0 pl-2"
+          alt="creatorsgarten"
+        />
+        <img
+          src="/organizers/cleverse.png"
+          class="h-10 w-auto shrink-0"
+          alt="cleverse"
+        />
       </div>
     </div>
-    <div class="text-shadow text-7xl text-right text-white font-mono pr-8">
+    <div class="text-shadow pr-8 text-right font-mono text-7xl text-white">
       <p>Creative</p>
       <p>coding</p>
       <p>meetup</p>
     </div>
   </div>
-  <div class="bg-black/50 min-w-[33%] text-white px-16 py-8 mb-16 text-shadow text-3xl space-y-4">
+  <div
+    class="text-shadow mb-16 min-w-[33%] space-y-4 bg-black/50 px-16 py-8 text-3xl text-white"
+  >
     <div>
       <Video />
     </div>

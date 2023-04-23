@@ -26,7 +26,9 @@
   $: {
     if (videoPlaylists.length !== 0) {
       console.log('current audio playlist')
-      console.table(videoPlaylists.map(({ name, author }) => ({ name, author })))
+      console.table(
+        videoPlaylists.map(({ name, author }) => ({ name, author }))
+      )
     }
   }
 
@@ -45,7 +47,9 @@
 
         playing = true
 
-        console.log(`now playing video: ${targetSubmission.name} by ${targetSubmission.author}`)
+        console.log(
+          `now playing video: ${targetSubmission.name} by ${targetSubmission.author}`
+        )
       } catch (e) {
         // when cursor out of index, means that it ran out of playlists
         reset()
@@ -55,9 +59,13 @@
 </script>
 
 <!-- svelte-ignore a11y-media-has-caption -->
-<video class="w-full h-full object-cover" bind:this={videoElement} on:ended={() => {
-  cursor++
-  playing = false
-}}>
+<video
+  class="h-full w-full object-cover"
+  bind:this={videoElement}
+  on:ended={() => {
+    cursor++
+    playing = false
+  }}
+>
   <source bind:this={sourceElement} />
 </video>

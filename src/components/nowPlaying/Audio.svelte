@@ -8,6 +8,9 @@
   <p class="inline-block" in:fly={{ y: 20 }}>♫ Not Playing</p>
 {:else}
   {#key `audio-${$playingAudio.name}-${$playingAudio.author}`}
-    <p class="inline-block" in:fly={{ y: 20 }}>♫ <b>Now Playing</b>: <b>"{$playingAudio.name}"</b> by <b>{$playingAudio.author}</b></p>
+    <p class="inline-block" in:fly={{ y: 20 }}>
+      ♫ <b>Now Playing</b>: <b>"{$playingAudio.name}"</b> by
+      <b>{$playingAudio.author}</b>
+    </p>
   {/key}
 {/if}

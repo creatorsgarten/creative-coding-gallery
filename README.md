@@ -1,5 +1,4 @@
-Creative Coding Gallery
-===
+# Creative Coding Gallery
 
 Gallery preview to be used for [Creative Coding Meetup](https://creatorsgarten.org/events/creativecodingmeetup/)
 
@@ -9,8 +8,7 @@ This app will run autonomously without user interaction. Therefore, special dire
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --autoplay-policy=no-user-gesture-required
 ```
 
-Adding submissions
----
+## Adding submissions
 
 > This app is ment to be run locally since adding A/V files into Git is not optimal
 
