@@ -109,4 +109,10 @@ export const submissions: Submission[] = [
     type: 'video',
     fileName: 'visuals/wvwave_water.mp4',
   },
+  {
+    name: 'New creatorsgarten.org',
+    author: 'rayriffy + Gusb3ll + dtinth',
+    type: 'video',
+    fileName: 'visuals/newgarten.mp4',
+  },
 ]
