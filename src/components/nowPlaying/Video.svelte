@@ -8,8 +8,9 @@
   <p class="inline-block" in:fly={{ y: 20 }}>Not Playing</p>
 {:else}
   {#key `video-${$playingVideo.name}-${$playingVideo.author}`}
-    <p class="inline-block" in:fly={{ y: 20 }}>
-      <b>{$playingVideo.name}</b><br />by <b>{$playingVideo.author}</b>
+    <p class="inline-block font-light" in:fly={{ y: 20 }}>
+      <b class="font-bold">{$playingVideo.name}</b><br />by
+      <b class="font-medium">{$playingVideo.author}</b>
     </p>
   {/key}
 {/if}
