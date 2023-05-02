@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="absolute bottom-0 left-0 right-0 top-0 z-50 flex h-full flex-col items-start justify-between"
+  class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 z-50 flex h-full flex-col items-start justify-between"
 >
   <div class="ml-auto flex flex-col items-end space-y-8">
     <div class="flex">
@@ -31,7 +31,7 @@
     </div>
   </div>
   <div
-    class="text-shadow mb-16 min-w-[33%] space-y-4 bg-black/50 px-16 py-8 text-3xl text-white"
+    class="text-shadow pointer-events-auto mb-16 min-w-[33%] space-y-4 bg-black/50 px-16 py-8 text-3xl text-white"
   >
     <div>
       <Video />

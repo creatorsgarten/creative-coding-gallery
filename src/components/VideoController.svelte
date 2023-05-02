@@ -8,7 +8,6 @@
   import type { Submission } from '../../@types/Submission'
 
   let videoElement: HTMLVideoElement = null
-  let sourceElement: HTMLSourceElement = null
   let playing = false
 
   let cursor = 0
@@ -40,7 +39,7 @@
         const targetSubmission = videoPlaylists[cursor]
 
         // put new audio into audio component
-        sourceElement.src = `/submissions/${targetSubmission.fileName}`
+        videoElement.src = `/submissions/${targetSubmission.fileName}`
 
         playingVideo.set(targetSubmission)
         videoElement.play()
@@ -60,12 +59,10 @@
 
 <!-- svelte-ignore a11y-media-has-caption -->
 <video
-  class="h-full w-full object-cover"
+  class="h-screen w-screen object-cover"
   bind:this={videoElement}
   on:ended={() => {
     cursor++
     playing = false
   }}
->
-  <source bind:this={sourceElement} />
-</video>
+/>
