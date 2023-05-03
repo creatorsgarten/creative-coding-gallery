@@ -108,7 +108,7 @@ export const submissions: Submission[] = [
     name: '????',
     author: 'viz.studio',
     type: 'video',
-    fileName: 'visuals/viz_studio.png',
+    fileName: 'visuals/viz_studio.mp4',
   },
   {
     name: 'Water: The Apology (experiment #1)',
