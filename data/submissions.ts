@@ -37,6 +37,19 @@ export const submissions: Submission[] = [
     type: 'audio',
     fileName: 'audio/joewan_onelasttimebeforewe.mp3',
   },
+
+  {
+    name: 'Hello Sunshine',
+    author: 'Teerapat Pisitsup',
+    type: 'video',
+    fileName: 'visuals/teerapatpisitsup_hellosunshine.mp4',
+  },
+  {
+    name: 'Insertion sort MV',
+    author: '@dtinth',
+    type: 'video',
+    fileName: 'visuals/dtinth_insertionsort.mp4',
+  },
   {
     name: 'JavaScript Bangkok 1.0.0 prototype SDF',
     author: '@dtinth implementing art style by @jirayutle',
@@ -90,12 +103,6 @@ export const submissions: Submission[] = [
     author: 'PopoTeaTree',
     type: 'video',
     fileName: 'visuals/juneygorllery_ringrotation.mp4',
-  },
-  {
-    name: 'Hello Sunshine',
-    author: 'Teerapat Pisitsup',
-    type: 'video',
-    fileName: 'visuals/teerapatpisitsup_hellosunshine.mp4',
   },
   {
     name: '????',
