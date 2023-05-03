@@ -7,10 +7,11 @@
 
   import type { Submission } from '../../@types/Submission'
   import { mediaController } from '../context/mediaController'
+  import { fade } from 'svelte/transition'
 
-  let videoElement: HTMLVideoElement = null
   let cursor = 0
   let videoPlaylists: Submission[] = []
+  let active: Submission[] = []
 
   let reset = () => {
     videoPlaylists = shuffle(submissions.filter(o => o.type === 'video'))
@@ -37,9 +38,7 @@
 
   const go = (index: number) => {
     cursor = index
-    const targetSubmission = videoPlaylists[index]
-    videoElement.src = `/submissions/${targetSubmission.fileName}`
-    videoElement.play()
+    active = [videoPlaylists[index]]
   }
 
   const next = () => {
@@ -51,12 +50,14 @@
   }
 </script>
 
-<!-- svelte-ignore a11y-media-has-caption -->
-<video
-  muted
-  class="h-screen w-screen object-cover"
-  bind:this={videoElement}
-  on:ended={() => {
-    next()
-  }}
-/>
+{#each active as submission (submission.fileName)}
+  <!-- svelte-ignore a11y-media-has-caption -->
+  <video
+    muted
+    class="fixed inset-0 h-screen w-screen object-cover"
+    src={`/submissions/${submission.fileName}`}
+    autoplay
+    on:ended={() => next()}
+    transition:fade
+  />
+{/each}
