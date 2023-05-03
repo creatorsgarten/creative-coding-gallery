@@ -1,5 +1,13 @@
 <script lang="ts">
+  import { submissions } from '../../data/submissions'
+  import { mediaController } from '../context/mediaController'
+
   let visible = true
+  const formatFile = (path: string) =>
+    path
+      .split('/')
+      .pop()
+      .replace(/\.\w+$/g, '')
   const sections = [
     {
       name: 'Audio',
@@ -7,6 +15,13 @@
         document.querySelectorAll('audio').forEach((e: any) => e.play()),
       pause: () =>
         document.querySelectorAll('audio').forEach((e: any) => e.pause()),
+      next: () => mediaController.nextAudio(),
+      items: submissions
+        .filter(s => s.type === 'audio')
+        .map(s => ({
+          fileName: s.fileName,
+          go: () => mediaController.playAudioFile(s.fileName),
+        })),
     },
     {
       name: 'Video',
@@ -14,6 +29,13 @@
         document.querySelectorAll('video').forEach((e: any) => e.play()),
       pause: () =>
         document.querySelectorAll('video').forEach((e: any) => e.pause()),
+      next: () => mediaController.nextVideo(),
+      items: submissions
+        .filter(s => s.type === 'video')
+        .map(s => ({
+          fileName: s.fileName,
+          go: () => mediaController.playVideoFile(s.fileName),
+        })),
     },
   ]
 </script>
@@ -46,6 +68,16 @@
             >
               Next
             </button>
+          </div>
+          <div class="flex w-[20em] flex-col">
+            {#each section.items as item}
+              <button
+                class="nowrap overflow-hidden truncate px-2 py-0.5 text-left hover:bg-white hover:text-black"
+                on:click={item.go}
+              >
+                {formatFile(item.fileName)}
+              </button>
+            {/each}
           </div>
         </div>
       {/each}

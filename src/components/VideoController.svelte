@@ -6,20 +6,24 @@
   import { playingVideo } from '../context/nowPlaying'
 
   import type { Submission } from '../../@types/Submission'
+  import { mediaController } from '../context/mediaController'
 
   let videoElement: HTMLVideoElement = null
-  let playing = false
-
   let cursor = 0
   let videoPlaylists: Submission[] = []
 
   let reset = () => {
     videoPlaylists = shuffle(submissions.filter(o => o.type === 'video'))
-    cursor = 0
+    go(0)
   }
 
   onMount(() => {
     reset()
+    mediaController.nextVideo = next
+    mediaController.playVideoFile = (fileName: string) => {
+      const index = videoPlaylists.findIndex(o => o.fileName === fileName)
+      if (index !== -1) go(index)
+    }
   })
 
   $: {
@@ -31,38 +35,28 @@
     }
   }
 
+  const go = (index: number) => {
+    cursor = index
+    const targetSubmission = videoPlaylists[index]
+    videoElement.src = `/submissions/${targetSubmission.fileName}`
+    videoElement.play()
+  }
+
+  const next = () => {
+    go((cursor + 1) % videoPlaylists.length)
+  }
+
   $: {
-    // if not playing, then pick new audio
-    if (!playing && videoElement && videoPlaylists.length > 0) {
-      try {
-        // randomly pick for now
-        const targetSubmission = videoPlaylists[cursor]
-
-        // put new audio into audio component
-        videoElement.src = `/submissions/${targetSubmission.fileName}`
-
-        playingVideo.set(targetSubmission)
-        videoElement.play()
-
-        playing = true
-
-        console.log(
-          `now playing video: ${targetSubmission.name} by ${targetSubmission.author}`
-        )
-      } catch (e) {
-        // when cursor out of index, means that it ran out of playlists
-        reset()
-      }
-    }
+    playingVideo.set(videoPlaylists[cursor] || null)
   }
 </script>
 
 <!-- svelte-ignore a11y-media-has-caption -->
 <video
+  muted
   class="h-screen w-screen object-cover"
   bind:this={videoElement}
   on:ended={() => {
-    cursor++
-    playing = false
+    next()
   }}
 />
