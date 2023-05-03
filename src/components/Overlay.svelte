@@ -31,7 +31,7 @@
     </div>
   </div>
   <div
-    class="text-shadow pointer-events-auto mb-16 min-w-[33%] space-y-4 bg-black/50 px-16 py-8 text-3xl text-white"
+    class="text-shadow pointer-events-auto mb-16 min-w-[33%] space-y-8 bg-black/50 px-16 py-8 text-3xl text-white"
   >
     <div>
       <Video />
